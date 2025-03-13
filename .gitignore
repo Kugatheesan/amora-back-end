@@ -1,0 +1,5 @@
+node_modules
+./Admin-Backend/node_modules
+.vscode
+.qodo
+.env
