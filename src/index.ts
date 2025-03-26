@@ -8,11 +8,15 @@ import bodyParser from "body-parser";
 import cookieParser from 'cookie-parser';
 import googleAuthRoutes from './auth'
 
+import dotenv from "dotenv";
+
+dotenv.config();
+
 const app = express();
 
 // CORS Configuration
 app.use(cors({
-    origin: ["http://localhost:5173","http://localhost:5174"], 
+    origin: ["http://localhost:5173","http://localhost:5174", String(process.env.FE_URL), String(process.env.ADMIN_URL)], 
     credentials: true,
 }));
 
