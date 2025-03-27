@@ -84,8 +84,8 @@ export async function signinuser(req: Request, res: Response) {
     // Set token in HTTP-only cookie for better security
     res.cookie("auth_token", token, {
         httpOnly: true,
-        secure: false,  // Keep false for local testing
-        sameSite: "lax", // Change to "None" in production
+        secure: true,  // Keep false for local testing
+        sameSite: "none", // Change to "None" in production
         expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
     });
 
@@ -137,8 +137,8 @@ export async function signinAdmin(req: any, res: any) {
     // Set token in HTTP-only cookie
     res.cookie("admin_auth_token", token, {
         httpOnly: true,
-        secure: false,  // Keep false for local testing, change to true in production
-        sameSite: "lax", // Change to "None" in production
+        secure: true,  // Keep false for local testing, change to true in production
+        sameSite: "none", // Change to "None" in production
         expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
     });
 
