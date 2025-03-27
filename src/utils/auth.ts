@@ -52,6 +52,7 @@ export const checkAuth = async (req: Request, res: Response, next: NextFunction)
 
   try {
       const token = req.cookies.auth_token;
+      console.log(token)
       if (!token) {
         res.status(401).send('Not authenticated');
         return;
